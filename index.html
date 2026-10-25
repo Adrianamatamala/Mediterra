@@ -19,11 +19,11 @@
                 extend: {
                     colors: {
                         mediterra: {
-                            dark: '#0A3641',     /* Azul petróleo corporativo del logo */
-                            green: '#2E7D32',    /* Verde montaña del logo */
+                            dark: '#0A3641',
+                            green: '#2E7D32',
                             lightGreen: '#4CAF50',
-                            blue: '#0288D1',     /* Azul olas del logo */
-                            sun: '#F59E0B',      /* Amarillo sol del logo */
+                            blue: '#0288D1',
+                            sun: '#F59E0B',
                             bgLight: '#F4F7F6'
                         }
                     },
@@ -68,14 +68,11 @@
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo recreado en SVG fiel al PDF -->
+                <!-- Logo MEDITERRA SVG -->
                 <a href="#" class="flex items-center gap-3 group">
                     <svg class="w-12 h-10 transition-transform group-hover:scale-105" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Sol -->
                         <circle cx="72" cy="16" r="10" fill="#EAB308"/>
-                        <!-- Montañas -->
                         <path d="M15 55 L45 15 L65 42 L80 25 L105 55" stroke="#2E7D32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <!-- Olas -->
                         <path d="M20 68 Q45 55 70 68 T100 65" stroke="#0288D1" stroke-width="6" stroke-linecap="round" fill="none"/>
                         <path d="M35 80 Q60 68 85 80 T105 78" stroke="#0288D1" stroke-width="6" stroke-linecap="round" fill="none"/>
                     </svg>
@@ -116,7 +113,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Estilo LIS Data Solutions) -->
+    <!-- HERO SECTION -->
     <section class="hero-bg text-white py-24 lg:py-32 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl">
@@ -158,7 +155,6 @@
                         Con un equipo directivo experto en estrategia ESG, ingeniería ambiental e ingeniería de seguridad minera, acompañamos a las empresas de principio a fin para convertir la sostenibilidad en su mayor ventaja competitiva, logrando ahorro de costes, eficiencia energética y cumplimiento normativo.
                     </p>
                     
-                    <!-- Caja de Misión -->
                     <div class="bg-mediterra-bgLight border-l-4 border-mediterra-green p-6 rounded-r-xl">
                         <h3 class="font-heading font-bold text-lg text-mediterra-dark flex items-center gap-2 mb-2">
                             <i data-lucide="target" class="w-5 h-5 text-mediterra-green"></i> Nuestra Misión
@@ -169,7 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Grid de Imágenes y Compromisos Diferenciadores -->
                 <div class="space-y-6">
                     <div class="grid grid-cols-2 gap-4">
                         <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Ingeniería y control energético" class="rounded-xl shadow-md h-48 w-full object-cover">
@@ -206,7 +201,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 2: DIRECCIÓN Y EL EQUIPO (Organigrama) -->
+    <!-- SECCIÓN 2: DIRECCIÓN Y EL EQUIPO -->
     <section id="equipo" class="py-20 bg-mediterra-bgLight border-y border-slate-200/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -219,10 +214,7 @@
                 </p>
             </div>
 
-            <!-- Estructura de Organigrama Visual -->
             <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                
-                <!-- Directora RRHH y Prevención -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 border-b-4 border-b-mediterra-sun flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <div class="w-16 h-16 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-heading font-bold text-xl mb-5">
@@ -243,7 +235,6 @@
                     </div>
                 </div>
 
-                <!-- CEO y Director General (Destacado en el centro) -->
                 <div class="bg-mediterra-dark text-white rounded-2xl p-8 shadow-xl border-b-4 border-b-mediterra-green flex flex-col justify-between transform md:-translate-y-4">
                     <div>
                         <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-heading font-bold text-xl mb-5">
@@ -264,7 +255,6 @@
                     </div>
                 </div>
 
-                <!-- Directora Medio Ambiente e Informática -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 border-b-4 border-b-mediterra-blue flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <div class="w-16 h-16 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-heading font-bold text-xl mb-5">
@@ -284,7 +274,6 @@
                         <i data-lucide="cpu" class="w-4 h-4 text-mediterra-blue"></i> Proyectos I+D+i y Normativa ISO
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -302,7 +291,6 @@
                 </p>
             </div>
 
-            <!-- Propuesta de Primera Visita (Paso a Paso estilo consultoría) -->
             <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-lg">
                 <div class="max-w-2xl mb-8">
                     <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Metodología en terreno</span>
@@ -340,7 +328,6 @@
                 </div>
             </div>
 
-            <!-- Modalidades de Contratación -->
             <div>
                 <h3 class="font-heading text-2xl font-bold text-center text-mediterra-dark mb-3">Modalidades de Contratación</h3>
                 <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10 text-sm">
@@ -348,7 +335,6 @@
                 </p>
 
                 <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Plan Básico -->
                     <div class="border border-slate-200 rounded-2xl p-8 flex flex-col justify-between hover:border-mediterra-green transition">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Nivel Inicial</span>
@@ -377,7 +363,6 @@
                         </a>
                     </div>
 
-                    <!-- Plan Integral (Destacado) -->
                     <div class="border-2 border-mediterra-green rounded-2xl p-8 flex flex-col justify-between shadow-lg relative bg-white">
                         <span class="absolute -top-3.5 right-6 bg-mediterra-green text-white text-xs font-bold px-3 py-1 rounded-full">
                             Más Recomendado
@@ -417,7 +402,6 @@
                         </a>
                     </div>
 
-                    <!-- Plan Acompañamiento Anual -->
                     <div class="border border-slate-200 rounded-2xl p-8 flex flex-col justify-between hover:border-mediterra-green transition">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Largo Plazo</span>
@@ -454,7 +438,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 4: NUESTROS SERVICIOS (3 Bloques con Pestañas Interactivas) -->
+    <!-- SECCIÓN 4: NUESTROS SERVICIOS -->
     <section id="servicios" class="py-20 bg-mediterra-bgLight border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -467,7 +451,6 @@
                 </p>
             </div>
 
-            <!-- Botones de Pestañas (Tabs) -->
             <div class="flex flex-wrap justify-center gap-3 mb-12">
                 <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn bg-mediterra-dark text-white px-6 py-3 rounded-xl font-semibold text-sm transition shadow-sm">
                     1. Huella de Carbono y Descarbonización
@@ -480,7 +463,6 @@
                 </button>
             </div>
 
-            <!-- CONTENIDO PESTAÑA 1 -->
             <div id="tab1" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <i data-lucide="building-2" class="w-8 h-8 text-mediterra-green mb-4"></i>
@@ -514,7 +496,6 @@
                 </div>
             </div>
 
-            <!-- CONTENIDO PESTAÑA 2 -->
             <div id="tab2" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <i data-lucide="pickaxe" class="w-8 h-8 text-mediterra-sun mb-4"></i>
@@ -543,7 +524,6 @@
                 </div>
             </div>
 
-            <!-- CONTENIDO PESTAÑA 3 -->
             <div id="tab3" class="tab-content hidden grid md:grid-cols-3 gap-6">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
                     <i data-lucide="scale" class="w-8 h-8 text-mediterra-blue mb-4"></i>
@@ -564,7 +544,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 5: CLIENTES Y EXPERIENCIA -->
+    <!-- SECCIÓN 5: CLIENTES Y EXPERIENCIA (CON LOGOTIPOS INVENTADOS) -->
     <section id="experiencia" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -579,73 +559,268 @@
                 </p>
             </div>
 
-            <!-- Grid de los 11 casos reales incluidos en el PDF -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-mediterra-green bg-emerald-50 px-2.5 py-1 rounded">Envases y embalajes</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">EcoPack Levante, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Cálculo de huella de carbono organizacional.</p>
+            <!-- Grid de los 11 casos reales con logotipos vectoriales inventados -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- 1. EcoPack Levante -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <path d="M20 4L34 12V28L20 36L6 28V12L20 4Z" stroke="#16A34A" stroke-width="2.5" stroke-linejoin="round"/>
+                                        <path d="M6 12L20 20L34 12M20 20V36" stroke="#16A34A" stroke-width="2" stroke-opacity="0.4"/>
+                                        <path d="M20 11C24 11 26 14 26 17C26 20 22 22 20 22C18 22 15 19 16 15C16.5 12.5 18 11 20 11Z" fill="#22C55E"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">ECOPACK</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-emerald-600 uppercase">Levante</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-mediterra-green bg-emerald-50 px-2.5 py-1 rounded-full">Envases</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">EcoPack Levante, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Cálculo de huella de carbono organizacional en planta de envases y embalajes.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-mediterra-blue bg-sky-50 px-2.5 py-1 rounded">Transporte y logística</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Transportes Mediterráneo, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones de la flota de vehículos.</p>
+                <!-- 2. Transportes Mediterráneo -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="20" r="14" stroke="#0284C7" stroke-width="2.5"/>
+                                        <path d="M10 17H26L23 13M10 23H30L27 27" stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">TRANSMED</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-sky-600 uppercase">Logística</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-mediterra-blue bg-sky-50 px-2.5 py-1 rounded-full">Logística</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Transportes Mediterráneo, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Cálculo de emisiones de la flota de vehículos y optimización de rutas.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-mediterra-green bg-emerald-50 px-2.5 py-1 rounded">Agricultura</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Frutas del Segura, S.C.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones agrícolas y consumo de agua.</p>
+                <!-- 3. Frutas del Segura -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="22" r="11" fill="#F97316"/>
+                                        <path d="M20 11C20 8 24 6 28 7C26 10 23 11 20 11Z" fill="#16A34A"/>
+                                        <path d="M11 35Q20 31 29 35" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">FRUTAS</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-orange-600 uppercase">Del Segura</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-mediterra-green bg-emerald-50 px-2.5 py-1 rounded-full">Agricultura</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Frutas del Segura, S.C.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Cálculo de emisiones agrícolas y auditoría de huella hídrica y consumo de agua.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Construcción</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Construcciones NovaHabitat, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones de maquinaria y materiales.</p>
+                <!-- 4. Construcciones NovaHabitat -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <path d="M8 32V16L18 10V32H8Z" fill="#D97706"/>
+                                        <path d="M20 32V14L32 20V32H20Z" fill="#0F172A"/>
+                                        <path d="M5 32H35" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">NOVAHABITAT</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-amber-600 uppercase">Edificación</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Construcción</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Construcciones NovaHabitat, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Cálculo de emisiones de maquinaria de obra y ciclo de vida de materiales.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-mediterra-blue bg-sky-50 px-2.5 py-1 rounded">Hostelería y turismo</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Hotel Costa Azul, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Huella de carbono asociada al consumo energético.</p>
+                <!-- 5. Hotel Costa Azul -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="18" r="7" fill="#F59E0B"/>
+                                        <path d="M6 27Q13 23 20 27T34 27" stroke="#0891B2" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path d="M9 32Q16 28 23 32T31 32" stroke="#06B6D4" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">COSTA AZUL</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-cyan-600 uppercase">Hotel & Resort</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-mediterra-blue bg-sky-50 px-2.5 py-1 rounded-full">Hostelería</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Hotel Costa Azul, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Huella de carbono asociada al consumo energético e instalaciones térmicas.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-slate-700 bg-slate-200/70 px-2.5 py-1 rounded">Industria metalúrgica</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Industrias Metálicas del Sureste, S.A.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Inventario de emisiones de gases de efecto invernadero.</p>
+                <!-- 6. Industrias Metálicas del Sureste -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-slate-100 border border-slate-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="20" r="10" stroke="#334155" stroke-width="3.5" stroke-dasharray="6 3"/>
+                                        <path d="M14 14H26M20 14V26M14 26H26" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">IM SURESTE</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-slate-500 uppercase">Metalurgia</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-slate-700 bg-slate-200/70 px-2.5 py-1 rounded-full">Metalurgia</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Industrias Metálicas del Sureste, S.A.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Inventario completo de emisiones de gases de efecto invernadero (GEI).</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Minerales metálicos</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Cobre y Metales del Sur, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Inventario de gases de efecto invernadero en procesamiento.</p>
+                <!-- 7. Cobre y Metales del Sur -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-orange-50 border border-orange-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <rect x="8" y="8" width="24" height="24" rx="5" fill="#EA580C" fill-opacity="0.15" stroke="#C2410C" stroke-width="2"/>
+                                        <text x="20" y="24" text-anchor="middle" fill="#9A3412" font-family="Montserrat, sans-serif" font-weight="800" font-size="13">Cu</text>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">COBRESUR</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-orange-700 uppercase">Minerales</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Procesamiento</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Cobre y Metales del Sur, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Inventario de gases de efecto invernadero en procesamiento de minerales metálicos.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Roca ornamental</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Pizarras y Rocas Naturales, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Huella de carbono de productos y procesos de extracción.</p>
+                <!-- 8. Pizarras y Rocas Naturales -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-stone-100 border border-stone-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <path d="M20 8L33 14L20 20L7 14L20 8Z" fill="#57534E"/>
+                                        <path d="M7 20L20 26L33 20" stroke="#78716C" stroke-width="2.5" stroke-linecap="round"/>
+                                        <path d="M7 26L20 32L33 26" stroke="#A8A29E" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">PIZARRAS</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-stone-500 uppercase">Roca Natural</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Roca Ornamental</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Pizarras y Rocas Naturales, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Huella de carbono de productos (LCA) y procesos de extracción de roca.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Explotación minera</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Minería Sostenible Ibérica, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Elaboración integral de plan de descarbonización.</p>
+                <!-- 9. Minería Sostenible Ibérica -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <path d="M7 29L17 13L24 23L29 16L35 29H7Z" fill="#065F46"/>
+                                        <circle cx="29" cy="11" r="3.5" fill="#10B981"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">MSI IBÉRICA</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-emerald-700 uppercase">EcoMinería</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Minería</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Minería Sostenible Ibérica, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Elaboración integral de plan de descarbonización y restauración en cantera.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
-                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Gravas y arenas</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Gravas del Segura, S.L.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Evaluación de emisiones de maquinaria móvil en extracción.</p>
+                <!-- 10. Gravas del Segura -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-11 h-11 rounded-xl bg-yellow-50 border border-yellow-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <polygon points="14,14 22,11 25,18 17,21" fill="#CA8A04"/>
+                                        <polygon points="22,21 31,19 32,27 24,29" fill="#854D0E"/>
+                                        <polygon points="9,23 18,22 19,29 11,30" fill="#A16207"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">GRAVAS</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-yellow-700 uppercase">Del Segura</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full">Áridos</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Gravas del Segura, S.L.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Evaluación de emisiones y consumo de combustible en maquinaria móvil de extracción.</p>
+                    </div>
                 </div>
 
-                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50 sm:col-span-2">
-                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Trituración y clasificación mineral</span>
-                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Tratamientos Minerales del Este, S.A.</h3>
-                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones y auditoría de eficiencia energética en planta de tratamiento.</p>
+                <!-- 11. Tratamientos Minerales del Este -->
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-mediterra-green hover:shadow-md transition bg-white flex flex-col justify-between sm:col-span-2 group">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-xl bg-teal-50 border border-teal-300 flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                                    <svg class="w-7 h-7" viewBox="0 0 40 40" fill="none">
+                                        <polygon points="20,6 33,13 33,27 20,34 7,27 7,13" stroke="#0F766E" stroke-width="2.5" fill="#CCFBF1"/>
+                                        <path d="M21 12L15 21H20L19 28L25 19H20L21 12Z" fill="#0D9488"/>
+                                    </svg>
+                                </div>
+                                <div class="leading-none">
+                                    <span class="block font-heading font-extrabold text-sm tracking-tight text-slate-800">TME · TRATAMIENTOS MINERALES</span>
+                                    <span class="block text-[10px] font-bold tracking-widest text-teal-700 uppercase">Del Este S.A. · Planta Industrial</span>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-semibold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full">Trituración Mineral</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-base text-mediterra-dark">Tratamientos Minerales del Este, S.A.</h3>
+                        <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Cálculo integral de emisiones y auditoría de eficiencia energética en cintas transportadoras, molinos y planta de trituración y clasificación de minerales.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -663,7 +838,6 @@
                 </p>
             </div>
 
-            <!-- Comparativa Legal / Voluntaria -->
             <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-white/5 border border-white/10 p-7 rounded-2xl">
                     <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
@@ -696,7 +870,6 @@
                 </div>
             </div>
 
-            <!-- Banner Comercial -->
             <div class="bg-gradient-to-r from-mediterra-green to-emerald-700 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                     <h4 class="font-heading text-xl font-bold">¿No sabes si tu empresa está obligada por el Real Decreto 214/2025?</h4>
@@ -724,7 +897,6 @@
                 </p>
             </div>
 
-            <!-- los 5 Beneficios Clave -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <div class="p-7 rounded-2xl bg-mediterra-bgLight border border-slate-200/80">
                     <div class="w-12 h-12 rounded-xl bg-mediterra-green text-white flex items-center justify-center mb-5">
@@ -816,7 +988,6 @@
                     </div>
                 </div>
 
-                <!-- Formulario de Contacto Simulado -->
                 <div class="bg-slate-800/70 p-8 rounded-2xl border border-slate-700">
                     <h4 class="font-heading font-bold text-lg mb-4">Solicita tu diagnóstico inicial</h4>
                     <form onsubmit="event.preventDefault(); alert('¡Gracias por contactar con MEDITERRA! Hemos recibido tu solicitud correctamente.');" class="space-y-4">
@@ -866,24 +1037,20 @@
 
     <!-- SCRIPTS DE INTERACTIVIDAD -->
     <script>
-        // Inicializar iconos Lucide
         lucide.createIcons();
 
-        // Menú móvil
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Cerrar menú móvil al hacer clic en un enlace
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // Sistema de pestañas (Tabs) para la sección de Servicios
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.add('hidden');
