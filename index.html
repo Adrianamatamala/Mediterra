@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDITERRA | Consultoría Ambiental y Descarbonización Minera e Industrial</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mediterra: {
+                            dark: '#0A3641',     /* Azul petróleo corporativo del logo */
+                            green: '#2E7D32',    /* Verde montaña del logo */
+                            lightGreen: '#4CAF50',
+                            blue: '#0288D1',     /* Azul olas del logo */
+                            sun: '#F59E0B',      /* Amarillo sol del logo */
+                            bgLight: '#F4F7F6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(10, 54, 65, 0.92), rgba(10, 54, 65, 0.75)), url('https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased selection:bg-mediterra-green selection:text-white">
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="bg-mediterra-dark text-slate-200 text-xs py-2 px-4 border-b border-slate-700/50 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-1.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-mediterra-sun"></i>
+                    Esquina con calle Antella, Polígono Industrial, 03008 Aguamarga (Alicante)
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-mediterra-blue"></i>
+                    (+34) 600 382 272
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-emerald-400 font-medium">Especialistas en Sector Extractivo, Industrial y Agrícola</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABECERA / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo recreado en SVG fiel al PDF -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <svg class="w-12 h-10 transition-transform group-hover:scale-105" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sol -->
+                        <circle cx="72" cy="16" r="10" fill="#EAB308"/>
+                        <!-- Montañas -->
+                        <path d="M15 55 L45 15 L65 42 L80 25 L105 55" stroke="#2E7D32" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Olas -->
+                        <path d="M20 68 Q45 55 70 68 T100 65" stroke="#0288D1" stroke-width="6" stroke-linecap="round" fill="none"/>
+                        <path d="M35 80 Q60 68 85 80 T105 78" stroke="#0288D1" stroke-width="6" stroke-linecap="round" fill="none"/>
+                    </svg>
+                    <span class="font-heading font-extrabold text-2xl tracking-widest text-mediterra-dark">MEDITERRA</span>
+                </a>
+
+                <!-- Navegación Escritorio -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                    <a href="#quienes-somos" class="hover:text-mediterra-green transition">Quiénes somos</a>
+                    <a href="#equipo" class="hover:text-mediterra-green transition">El Equipo</a>
+                    <a href="#como-ayudamos" class="hover:text-mediterra-green transition">Cómo ayudamos</a>
+                    <a href="#servicios" class="hover:text-mediterra-green transition">Servicios</a>
+                    <a href="#experiencia" class="hover:text-mediterra-green transition">Experiencia</a>
+                    <a href="#normativa" class="hover:text-mediterra-green transition">Obligatoriedad</a>
+                    <a href="#beneficios" class="hover:text-mediterra-green transition">Beneficios</a>
+                    <a href="#contacto" class="bg-mediterra-green hover:bg-green-800 text-white px-5 py-2.5 rounded-lg font-semibold transition shadow-sm">
+                        Solicitar Diagnóstico
+                    </a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 text-sm font-medium">
+            <a href="#quienes-somos" class="block py-2 text-slate-700 hover:text-mediterra-green">Quiénes somos</a>
+            <a href="#equipo" class="block py-2 text-slate-700 hover:text-mediterra-green">Dirección y Equipo</a>
+            <a href="#como-ayudamos" class="block py-2 text-slate-700 hover:text-mediterra-green">Cómo podemos ayudarte</a>
+            <a href="#servicios" class="block py-2 text-slate-700 hover:text-mediterra-green">Nuestros Servicios</a>
+            <a href="#experiencia" class="block py-2 text-slate-700 hover:text-mediterra-green">Clientes y Experiencia</a>
+            <a href="#normativa" class="block py-2 text-slate-700 hover:text-mediterra-green">¿Qué empresas deben calcularla?</a>
+            <a href="#beneficios" class="block py-2 text-slate-700 hover:text-mediterra-green">Beneficios</a>
+            <a href="#contacto" class="block text-center bg-mediterra-green text-white py-2.5 rounded-lg font-semibold">Contactar ahora</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Estilo LIS Data Solutions) -->
+    <section class="hero-bg text-white py-24 lg:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-emerald-300 mb-6">
+                    <i data-lucide="leaf" class="w-4 h-4"></i> Consultoría Ambiental y Descarbonización
+                </div>
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Transformamos tus exigencias ambientales en <span class="text-emerald-400">ahorro y ventaja competitiva</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-200 mb-8 leading-relaxed font-light">
+                    ¡Te damos la bienvenida a <strong>MEDITERRA</strong>! Somos tu aliado en sostenibilidad a pie de cantera, fábrica y campo. No solo calculamos la huella de carbono: optimizamos costes operativos, mejoramos la eficiencia energética y aseguramos el cumplimiento normativo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contacto" class="bg-mediterra-green hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-lg text-center transition shadow-lg flex items-center justify-center gap-2">
+                        <span>Agenda una primera visita</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#servicios" class="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg text-center transition">
+                        Explorar catálogo de servicios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 1: QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-mediterra-green font-bold text-sm uppercase tracking-wider">01. Quiénes Somos</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-mediterra-dark mt-2 mb-6">
+                        Conocemos la realidad operativa a pie de cantera, fábrica y campo
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Somos una consultoría ambiental de <strong>Aguamarga (Alicante)</strong> especializada en huella de carbono, descarbonización e innovación (LIFE/CDTI) para el sector extractivo, industrial, agrícola y de servicios.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Con un equipo directivo experto en estrategia ESG, ingeniería ambiental e ingeniería de seguridad minera, acompañamos a las empresas de principio a fin para convertir la sostenibilidad en su mayor ventaja competitiva, logrando ahorro de costes, eficiencia energética y cumplimiento normativo.
+                    </p>
+                    
+                    <!-- Caja de Misión -->
+                    <div class="bg-mediterra-bgLight border-l-4 border-mediterra-green p-6 rounded-r-xl">
+                        <h3 class="font-heading font-bold text-lg text-mediterra-dark flex items-center gap-2 mb-2">
+                            <i data-lucide="target" class="w-5 h-5 text-mediterra-green"></i> Nuestra Misión
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Guiar y acompañar a empresas del sector extractivo, industrial, agrícola y de servicios en su transición hacia la sostenibilidad real, transformando sus obligaciones ambientales y el cálculo de la huella de carbono en ventajas competitivas, eficiencia operativa y ahorro de costes directos, a través de soluciones técnicas rigurosas, innovación en proyectos de I+D+i y un compromiso cercano en la descarbonización de sus procesos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Grid de Imágenes y Compromisos Diferenciadores -->
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Ingeniería y control energético" class="rounded-xl shadow-md h-48 w-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Sector minero y extractivo" class="rounded-xl shadow-md h-48 w-full object-cover mt-6">
+                    </div>
+
+                    <div class="bg-mediterra-dark text-white p-6 sm:p-8 rounded-2xl shadow-xl">
+                        <h3 class="font-heading font-bold text-xl mb-4 text-emerald-400">Nuestros 5 compromisos diferenciadores</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Diagnóstico inicial de la explotación:</strong> Identificamos las principales fuentes de emisiones antes de proponer soluciones.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Especialización en minería y canteras:</strong> Analizamos maquinaria pesada, combustibles, trituración, transporte y procesos minerales.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Plan de ahorro personalizado:</strong> Priorizamos medidas según su coste, ahorro potencial y viabilidad técnica.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Seguimiento anual de resultados:</strong> No entregamos solo un informe; comprobamos la evolución de las emisiones.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Asesoramiento cercano y transparente:</strong> Explicamos resultados de forma comprensible y con presupuestos claros.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: DIRECCIÓN Y EL EQUIPO (Organigrama) -->
+    <section id="equipo" class="py-20 bg-mediterra-bgLight border-y border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-mediterra-green font-bold text-sm uppercase tracking-wider">02. Dirección y Equipo</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-mediterra-dark mt-2 mb-4">
+                    Organigrama de la Empresa
+                </h2>
+                <p class="text-slate-600">
+                    Un equipo directivo multidisciplinar que combina ingeniería ambiental, informática, seguridad minera y estrategia corporativa ESG.
+                </p>
+            </div>
+
+            <!-- Estructura de Organigrama Visual -->
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Directora RRHH y Prevención -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 border-b-4 border-b-mediterra-sun flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-16 h-16 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-heading font-bold text-xl mb-5">
+                            LL
+                        </div>
+                        <span class="inline-block bg-amber-50 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                            RRHH y Prevención
+                        </span>
+                        <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-3">
+                            Leidi Ana Lino Neves
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Especialista en el Reglamento de Seguridad Minera y prevención de riesgos en el sector extractivo, además de estar enfocada en desarrollar la cultura de sostenibilidad interna.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-400">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-mediterra-sun"></i> Seguridad Minera y Cultura ESG
+                    </div>
+                </div>
+
+                <!-- CEO y Director General (Destacado en el centro) -->
+                <div class="bg-mediterra-dark text-white rounded-2xl p-8 shadow-xl border-b-4 border-b-mediterra-green flex flex-col justify-between transform md:-translate-y-4">
+                    <div>
+                        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-heading font-bold text-xl mb-5">
+                            JC
+                        </div>
+                        <span class="inline-block bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                            CEO y Director General
+                        </span>
+                        <h3 class="font-heading text-2xl font-bold text-white mb-3">
+                            Jaime Campos González
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Experto en huella de carbono, descarbonización industrial y estrategia corporativa ESG. Lidera la visión estratégica y el acompañamiento integral a las explotaciones y empresas clientes.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-700 flex items-center gap-2 text-xs text-emerald-400">
+                        <i data-lucide="award" class="w-4 h-4"></i> Dirección Estratégica y Descarbonización
+                    </div>
+                </div>
+
+                <!-- Directora Medio Ambiente e Informática -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 border-b-4 border-b-mediterra-blue flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="w-16 h-16 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-heading font-bold text-xl mb-5">
+                            AM
+                        </div>
+                        <span class="inline-block bg-sky-50 text-sky-800 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                            Medio Ambiente e Informática
+                        </span>
+                        <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-3">
+                            Adriana Matamala Martínez
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Lidera la ejecución técnica de proyectos de I+D+i y la gestión del control ambiental en CAE, además de estar especializada en la implantación de normas ISO 14001, 14064 y 50001.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-400">
+                        <i data-lucide="cpu" class="w-4 h-4 text-mediterra-blue"></i> Proyectos I+D+i y Normativa ISO
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: CÓMO PODEMOS AYUDARTE -->
+    <section id="como-ayudamos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-14">
+                <span class="text-mediterra-green font-bold text-sm uppercase tracking-wider">03. Cómo Podemos Ayudarte</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-mediterra-dark mt-2 mb-4">
+                    Más allá del cálculo: eficiencia operativa y ahorro real para tu explotación
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Sabemos que las explotaciones mineras e industriales tienen necesidades específicas: elevado consumo de combustible de la maquinaria, gasto eléctrico en equipos de tratamiento y emisiones asociadas al transporte de materiales. Evitamos recomendar inversiones innecesarias y trabajamos con metodologías reconocidas.
+                </p>
+            </div>
+
+            <!-- Propuesta de Primera Visita (Paso a Paso estilo consultoría) -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-lg">
+                <div class="max-w-2xl mb-8">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Metodología en terreno</span>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold mt-1">Propuesta de Primera Visita</h3>
+                    <p class="text-slate-300 text-sm mt-2">
+                        Antes de plantear cualquier inversión, visitamos su centro de trabajo para conocer de primera mano la realidad operativa de la explotación o planta:
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                        <div class="text-emerald-400 font-heading font-bold text-2xl mb-2">01</div>
+                        <h4 class="font-semibold text-sm mb-1">Revisión de Consumos</h4>
+                        <p class="text-xs text-slate-300">Analizamos los principales consumos de combustible y electricidad en planta.</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                        <div class="text-emerald-400 font-heading font-bold text-2xl mb-2">02</div>
+                        <h4 class="font-semibold text-sm mb-1">Fuentes de Emisión</h4>
+                        <p class="text-xs text-slate-300">Identificamos los focos de emisiones directos e indirectos más importantes.</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                        <div class="text-emerald-400 font-heading font-bold text-2xl mb-2">03</div>
+                        <h4 class="font-semibold text-sm mb-1">Marco Legal</h4>
+                        <p class="text-xs text-slate-300">Comprobamos qué obligaciones ambientales y normativas son aplicables.</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                        <div class="text-emerald-400 font-heading font-bold text-2xl mb-2">04</div>
+                        <h4 class="font-semibold text-sm mb-1">Detección de Ahorro</h4>
+                        <p class="text-xs text-slate-300">Detectamos oportunidades preliminares de ahorro energético y económico.</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-xl">
+                        <div class="text-emerald-400 font-heading font-bold text-2xl mb-2">05</div>
+                        <h4 class="font-semibold text-sm mb-1">Propuesta a Medida</h4>
+                        <p class="text-xs text-slate-300">Presentamos un plan de trabajo 100% adaptado a la realidad de la explotación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modalidades de Contratación -->
+            <div>
+                <h3 class="font-heading text-2xl font-bold text-center text-mediterra-dark mb-3">Modalidades de Contratación</h3>
+                <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10 text-sm">
+                    Para adaptarnos al nivel ambiental y a las necesidades de cada empresa, estructuramos nuestro trabajo en tres opciones:
+                </p>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Plan Básico -->
+                    <div class="border border-slate-200 rounded-2xl p-8 flex flex-col justify-between hover:border-mediterra-green transition">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Nivel Inicial</span>
+                            <h4 class="font-heading text-xl font-bold text-mediterra-dark mt-1">Plan Básico</h4>
+                            <p class="text-sm font-medium text-mediterra-green mb-4">Diagnóstico e Inventario</p>
+                            <p class="text-xs text-slate-600 mb-6">
+                                Pensado para empresas que necesitan determinar su punto de partida o cumplir con el primer hito de cuantificación.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Cálculo de huella de carbono corporativa (Alcances 1 y 2).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Análisis preliminar de consumos energéticos y de flota.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Entrega del informe técnico oficial de emisiones.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" class="mt-8 block text-center bg-slate-100 hover:bg-slate-200 text-mediterra-dark font-semibold py-3 rounded-lg text-sm transition">
+                            Consultar Plan Básico
+                        </a>
+                    </div>
+
+                    <!-- Plan Integral (Destacado) -->
+                    <div class="border-2 border-mediterra-green rounded-2xl p-8 flex flex-col justify-between shadow-lg relative bg-white">
+                        <span class="absolute -top-3.5 right-6 bg-mediterra-green text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Más Recomendado
+                        </span>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-mediterra-green">Optimización Total</span>
+                            <h4 class="font-heading text-xl font-bold text-mediterra-dark mt-1">Plan Integral</h4>
+                            <p class="text-sm font-medium text-mediterra-green mb-4">Descarbonización y Ahorro Directo</p>
+                            <p class="text-xs text-slate-600 mb-6">
+                                Diseñado para organizaciones que buscan optimizar costes operacionales, ejecutar un plan de acción y tramitar sellos oficiales.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span><strong>Todo lo incluido en el Plan Básico.</strong></span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Cuantificación de fuentes clave de <strong>Alcance 3</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Diseño del Plan de Reducción con estimación de inversión y retorno (ROI).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Auditoría energética de procesos y maquinaria pesada.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-green shrink-0 mt-1"></i>
+                                    <span>Tramitación completa ante el <strong>Registro MITECO</strong>.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" class="mt-8 block text-center bg-mediterra-green hover:bg-green-800 text-white font-semibold py-3 rounded-lg text-sm transition">
+                            Solicitar Plan Integral
+                        </a>
+                    </div>
+
+                    <!-- Plan Acompañamiento Anual -->
+                    <div class="border border-slate-200 rounded-2xl p-8 flex flex-col justify-between hover:border-mediterra-green transition">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Largo Plazo</span>
+                            <h4 class="font-heading text-xl font-bold text-mediterra-dark mt-1">Plan Anual</h4>
+                            <p class="text-sm font-medium text-mediterra-blue mb-4">Gestión Continuada</p>
+                            <p class="text-xs text-slate-600 mb-6">
+                                Para empresas que requieren un seguimiento frecuente, actualización de datos y soporte normativo constante.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-700">
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-blue shrink-0 mt-1"></i>
+                                    <span>Recálculo anual de la huella de carbono y actualización de inventarios.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-blue shrink-0 mt-1"></i>
+                                    <span>Evaluación del impacto real de las medidas implantadas.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-blue shrink-0 mt-1"></i>
+                                    <span>Comparativa de evolución temporal (benchmarking).</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-mediterra-blue shrink-0 mt-1"></i>
+                                    <span>Asesoramiento permanente ante cambios legislativos, inspecciones o licitaciones.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#contacto" class="mt-8 block text-center bg-slate-100 hover:bg-slate-200 text-mediterra-dark font-semibold py-3 rounded-lg text-sm transition">
+                            Consultar Plan Anual
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: NUESTROS SERVICIOS (3 Bloques con Pestañas Interactivas) -->
+    <section id="servicios" class="py-20 bg-mediterra-bgLight border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-mediterra-green font-bold text-sm uppercase tracking-wider">04. Nuestros Servicios</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-mediterra-dark mt-2 mb-4">
+                    Catálogo Integral de Soluciones Ambientales
+                </h2>
+                <p class="text-slate-600">
+                    Estructuramos nuestras soluciones en tres grandes bloques de actuación para cubrir desde el inventario general de emisiones hasta la optimización técnica en cantera.
+                </p>
+            </div>
+
+            <!-- Botones de Pestañas (Tabs) -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn bg-mediterra-dark text-white px-6 py-3 rounded-xl font-semibold text-sm transition shadow-sm">
+                    1. Huella de Carbono y Descarbonización
+                </button>
+                <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn bg-white text-slate-700 hover:bg-slate-100 px-6 py-3 rounded-xl font-semibold text-sm transition border border-slate-200">
+                    2. Especialización Minera e Industrial
+                </button>
+                <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn bg-white text-slate-700 hover:bg-slate-100 px-6 py-3 rounded-xl font-semibold text-sm transition border border-slate-200">
+                    3. Asesoramiento Normativo y Formación
+                </button>
+            </div>
+
+            <!-- CONTENIDO PESTAÑA 1 -->
+            <div id="tab1" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="building-2" class="w-8 h-8 text-mediterra-green mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Huella de Carbono Corporativa (Alcances 1, 2 y 3)</h3>
+                    <p class="text-sm text-slate-600">Cuantificación anual de emisiones de la organización: consumos térmicos, gasóleo de flota, electricidad, gases refrigerantes, transporte contratado, residuos y compras.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="package-check" class="w-8 h-8 text-mediterra-green mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Huella de Producto y Ciclo de Vida (LCA)</h3>
+                    <p class="text-sm text-slate-600">Evaluación de emisiones de un producto en sus etapas de materias primas, fabricación, embalaje, logística y fin de vida, respondiendo a exigencias de clientes y exportación.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="hard-hat" class="w-8 h-8 text-mediterra-green mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Huella en Proyectos, Obras y Servicios</h3>
+                    <p class="text-sm text-slate-600">Cálculo de impacto para actividades con límites definidos: obras públicas o privadas, campañas logísticas, servicios de transporte o eventos corporativos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="trending-down" class="w-8 h-8 text-mediterra-green mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Planes de Reducción y Eficiencia</h3>
+                    <p class="text-sm text-slate-600">Diseño de medidas rentables para disminuir consumo de combustible, optimizar rutas, reducir residuos e integrar renovables con estimación de inversión y retorno.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="file-badge" class="w-8 h-8 text-mediterra-green mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Registro Oficial MITECO e Informes</h3>
+                    <p class="text-sm text-slate-600">Preparación de inventarios técnicos y tramitación integral para la inscripción, validación y obtención del sello oficial en el Registro del Ministerio.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="sprout" class="w-8 h-8 text-mediterra-green mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Seguimiento ESG y Compensación</h3>
+                    <p class="text-sm text-slate-600">Actualización periódica de indicadores año a año y gestión de proyectos de absorción de carbono para neutralizar emisiones residuales.</p>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PESTAÑA 2 -->
+            <div id="tab2" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="pickaxe" class="w-8 h-8 text-mediterra-sun mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Huella de Carbono Minera de Explotación</h3>
+                    <p class="text-sm text-slate-600">Cuantificación específica de emisiones procedentes de maquinaria pesada, voladuras con explosivos, consumos de gasóleo, electricidad de planta y transporte de mineral.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="truck" class="w-8 h-8 text-mediterra-sun mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Optimización de Maquinaria y Transporte</h3>
+                    <p class="text-sm text-slate-600">Auditoría operativa del consumo de excavadoras, perforadoras, dúmperes y flotas pesadas para detectar ineficiencias directas y reducir el gasto en combustible.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="zap" class="w-8 h-8 text-mediterra-sun mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Eficiencia en Plantas de Tratamiento</h3>
+                    <p class="text-sm text-slate-600">Evaluación del gasto eléctrico en sistemas de trituración, molienda, clasificación y cintas transportadoras para optimizar la factura eléctrica.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="trees" class="w-8 h-8 text-mediterra-sun mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Restauración Ecológica y Captura</h3>
+                    <p class="text-sm text-slate-600">Asesoramiento técnico en la restauración de canteras, revegetación de huecos mineros y seguimiento de actuaciones que actúan como sumideros naturales de carbono.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 md:col-span-2">
+                    <i data-lucide="clipboard-list" class="w-8 h-8 text-mediterra-sun mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Planes Mineros de Descarbonización e Informes Técnicos</h3>
+                    <p class="text-sm text-slate-600">Elaboración de documentación especializada adaptada a la legislación del sector extractivo, pliegos de contratación pública y requisitos de las autoridades mineras y ambientales.</p>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PESTAÑA 3 -->
+            <div id="tab3" class="tab-content hidden grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="scale" class="w-8 h-8 text-mediterra-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Diagnóstico Normativo y Cumplimiento Legal</h3>
+                    <p class="text-sm text-slate-600">Evaluación previa de obligaciones legales en materia de huella de carbono y sostenibilidad (Real Decreto 214/2025, reporte de información no financiera).</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="globe-2" class="w-8 h-8 text-mediterra-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Asesoría Ambiental 360°</h3>
+                    <p class="text-sm text-slate-600">Estudios de optimización de recursos, gestión eficiente del agua, evaluación de aspectos ambientales y minimización de residuos corporativos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i data-lucide="graduation-cap" class="w-8 h-8 text-mediterra-blue mb-4"></i>
+                    <h3 class="font-heading font-bold text-lg text-mediterra-dark mb-2">Formación y Sensibilización Corporativa</h3>
+                    <p class="text-sm text-slate-600">Talleres técnicos y jornadas de concienciación para directivos y trabajadores sobre buenas prácticas, eficiencia energética y reducción del impacto ambiental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: CLIENTES Y EXPERIENCIA -->
+    <section id="experiencia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-mediterra-green font-bold text-sm uppercase tracking-wider">05. Clientes y Experiencia</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-mediterra-dark mt-2">
+                        Empresas que ya han confiado en nosotros
+                    </h2>
+                </div>
+                <p class="text-slate-600 text-sm max-w-md mt-4 md:mt-0">
+                    Contamos con una sólida trayectoria trabajando junto a compañías líderes del sector minero, metalúrgico, logístico, agrícola y de construcción.
+                </p>
+            </div>
+
+            <!-- Grid de los 11 casos reales incluidos en el PDF -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-mediterra-green bg-emerald-50 px-2.5 py-1 rounded">Envases y embalajes</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">EcoPack Levante, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Cálculo de huella de carbono organizacional.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-mediterra-blue bg-sky-50 px-2.5 py-1 rounded">Transporte y logística</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Transportes Mediterráneo, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones de la flota de vehículos.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-mediterra-green bg-emerald-50 px-2.5 py-1 rounded">Agricultura</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Frutas del Segura, S.C.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones agrícolas y consumo de agua.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Construcción</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Construcciones NovaHabitat, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones de maquinaria y materiales.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-mediterra-blue bg-sky-50 px-2.5 py-1 rounded">Hostelería y turismo</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Hotel Costa Azul, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Huella de carbono asociada al consumo energético.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-slate-700 bg-slate-200/70 px-2.5 py-1 rounded">Industria metalúrgica</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Industrias Metálicas del Sureste, S.A.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Inventario de emisiones de gases de efecto invernadero.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Minerales metálicos</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Cobre y Metales del Sur, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Inventario de gases de efecto invernadero en procesamiento.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Roca ornamental</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Pizarras y Rocas Naturales, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Huella de carbono de productos y procesos de extracción.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Explotación minera</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Minería Sostenible Ibérica, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Elaboración integral de plan de descarbonización.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Gravas y arenas</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Gravas del Segura, S.L.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Evaluación de emisiones de maquinaria móvil en extracción.</p>
+                </div>
+
+                <div class="p-5 rounded-xl border border-slate-200 hover:border-mediterra-green hover:shadow-sm transition bg-slate-50/50 sm:col-span-2">
+                    <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-2.5 py-1 rounded">Trituración y clasificación mineral</span>
+                    <h3 class="font-heading font-bold text-base text-mediterra-dark mt-3">Tratamientos Minerales del Este, S.A.</h3>
+                    <p class="text-xs text-slate-600 mt-1">Cálculo de emisiones y auditoría de eficiencia energética en planta de tratamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: ¿QUÉ EMPRESAS DEBERÍAN CALCULAR LA HUELLA DE CARBONO? -->
+    <section id="normativa" class="py-20 bg-mediterra-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-emerald-400 font-bold text-sm uppercase tracking-wider">06. Marco Normativo y Perfiles</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold mt-2 mb-4">
+                    ¿Qué empresas deberían calcular la huella de carbono?
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    En España, no todas las empresas están obligadas por ley a calcular su huella de carbono. La obligación depende de las características de la organización y de la normativa aplicable (como el <strong>Real Decreto 214/2025</strong>), pero cada vez más pymes y canteras lo realizan por competitividad y exigencias de clientes.
+                </p>
+            </div>
+
+            <!-- Comparativa Legal / Voluntaria -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white/5 border border-white/10 p-7 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-5">
+                        <i data-lucide="landmark" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">1. Empresas Obligadas por Ley</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Determinadas empresas sujetas a la presentación de información no financiera están obligadas a calcular anualmente su huella, elaborar un plan de reducción y publicar la información según criterios de tamaño, condición de entidad de interés público y umbrales económicos.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-7 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">2. Explotaciones y Pymes (Carácter Voluntario)</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        Las pequeñas explotaciones mineras, canteras, fábricas, hoteles, empresas logísticas o agrícolas que no entren en los supuestos legales pueden calcularla voluntariamente para <strong>reducir costes de combustible/electricidad</strong> y puntuar más en licitaciones públicas y cadenas de suministro.
+                    </p>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-7 rounded-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold mb-3">3. Inscripción en el Registro MITECO</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        El registro oficial del MITECO es voluntario para las empresas privadas, incluso para aquellas obligadas a calcular y publicar su huella conforme al art. 11 del <strong>RD 214/2025, de 18 de marzo</strong>. Obtener su sello oficial aporta un altísimo valor reputacional.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Banner Comercial -->
+            <div class="bg-gradient-to-r from-mediterra-green to-emerald-700 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h4 class="font-heading text-xl font-bold">¿No sabes si tu empresa está obligada por el Real Decreto 214/2025?</h4>
+                    <p class="text-sm text-emerald-100 mt-1">
+                        Realizamos una primera evaluación normativa para determinar si estás obligado, qué requisitos debes cumplir y cómo aprovecharlo comercialmente sin que tengas que interpretar la ley por tu cuenta.
+                    </p>
+                </div>
+                <a href="#contacto" class="bg-white text-mediterra-dark hover:bg-slate-100 font-bold px-6 py-3.5 rounded-xl text-sm shrink-0 transition shadow">
+                    Solicitar Evaluación Normativa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: BENEFICIOS -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-mediterra-green font-bold text-sm uppercase tracking-wider">07. Beneficios y Valor Añadido</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-mediterra-dark mt-2 mb-4">
+                    ¿Qué beneficios obtiene tu empresa al trabajar con MEDITERRA?
+                </h2>
+                <p class="text-slate-600">
+                    Convertimos la gestión ambiental en retorno económico directo, tranquilidad legal y posicionamiento comercial.
+                </p>
+            </div>
+
+            <!-- los 5 Beneficios Clave -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="p-7 rounded-2xl bg-mediterra-bgLight border border-slate-200/80">
+                    <div class="w-12 h-12 rounded-xl bg-mediterra-green text-white flex items-center justify-center mb-5">
+                        <i data-lucide="piggy-bank" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-2">Ahorro Económico Directo</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Identificamos consumos excesivos de gasóleo y electricidad y proponemos mejoras rentables para reducir costes de explotación (optimización de rutas de camiones, eficiencia en equipos de trituración, etc.).
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-mediterra-bgLight border border-slate-200/80">
+                    <div class="w-12 h-12 rounded-xl bg-mediterra-dark text-white flex items-center justify-center mb-5">
+                        <i data-lucide="shield" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-2">Mayor Seguridad Normativa</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Ayudamos a identificar las obligaciones aplicables, preparar los cálculos rigurosos y organizar toda la documentación necesaria, reduciendo el riesgo de errores e incumplimientos.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-mediterra-bgLight border border-slate-200/80">
+                    <div class="w-12 h-12 rounded-xl bg-mediterra-blue text-white flex items-center justify-center mb-5">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-2">Más Oportunidades de Negocio</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Una información ambiental bien preparada permite responder con solvencia a cuestionarios de grandes clientes, requisitos de cadenas de suministro y criterios ambientales en licitaciones.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-mediterra-bgLight border border-slate-200/80">
+                    <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center mb-5">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-2">Mejor Control de la Explotación</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        La empresa podrá comparar las emisiones entre años y por tonelada de mineral extraído o procesado (KPIs), comprobando con datos reales si está mejorando su eficiencia operativa.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-mediterra-bgLight border border-slate-200/80 md:col-span-2">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-5">
+                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-mediterra-dark mb-2">Mejora de la Imagen Ambiental y Visión Integral</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Demostrar avances con datos verificables transmite una imagen responsable ante clientes, administraciones, trabajadores y comunidades cercanas. Además, integramos la huella de carbono con la <strong>restauración de canteras, revegetación y gestión de residuos</strong> con un único interlocutor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO / FOOTER -->
+    <footer id="contacto" class="bg-slate-900 text-white pt-20 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 pb-16 border-b border-slate-800">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <svg class="w-10 h-8" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="72" cy="16" r="10" fill="#EAB308"/>
+                            <path d="M15 55 L45 15 L65 42 L80 25 L105 55" stroke="#4CAF50" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 68 Q45 55 70 68 T100 65" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" fill="none"/>
+                            <path d="M35 80 Q60 68 85 80 T105 78" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" fill="none"/>
+                        </svg>
+                        <span class="font-heading font-extrabold text-2xl tracking-widest text-white">MEDITERRA</span>
+                    </div>
+                    <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">
+                        ¿Hablamos sobre el futuro sostenible de tu empresa?
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-8 max-w-md leading-relaxed">
+                        Solicita una primera visita técnica a tus instalaciones sin compromiso. Analizaremos tus consumos y te presentaremos una propuesta clara, transparente y orientada al ahorro.
+                    </p>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                            <span>Esquina con calle Antella, Polígono Industrial<br>03008 Aguamarga (Alicante), España</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+                            <span>(+34) 600 382 272</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+                            <span>contacto@mediterraconsultoria.es</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario de Contacto Simulado -->
+                <div class="bg-slate-800/70 p-8 rounded-2xl border border-slate-700">
+                    <h4 class="font-heading font-bold text-lg mb-4">Solicita tu diagnóstico inicial</h4>
+                    <form onsubmit="event.preventDefault(); alert('¡Gracias por contactar con MEDITERRA! Hemos recibido tu solicitud correctamente.');" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Nombre y Apellidos *</label>
+                                <input type="text" required placeholder="Ej. Juan Pérez" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Empresa / Explotación *</label>
+                                <input type="text" required placeholder="Nombre de la empresa" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400">
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Teléfono *</label>
+                                <input type="tel" required placeholder="+34 600 000 000" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-300 mb-1">Modalidad de interés</label>
+                                <select class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400">
+                                    <option>Primera visita de diagnóstico</option>
+                                    <option>Plan Básico (Alcances 1 y 2)</option>
+                                    <option>Plan Integral (Descarbonización + MITECO)</option>
+                                    <option>Plan de Acompañamiento Anual</option>
+                                    <option>Consulta sobre RD 214/2025</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-300 mb-1">Mensaje o necesidades específicas</label>
+                            <textarea rows="3" placeholder="Cuéntanos brevemente el sector de tu empresa o actividad..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-400"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-mediterra-green hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg text-sm transition shadow">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+                <p>© 2026 MEDITERRA Consultoría Ambiental S.L. Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Huellas que cuidan el mañana · Aguamarga (Alicante)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE INTERACTIVIDAD -->
+    <script>
+        // Inicializar iconos Lucide
+        lucide.createIcons();
+
+        // Menú móvil
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sistema de pestañas (Tabs) para la sección de Servicios
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-mediterra-dark', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+            activeBtn.classList.add('bg-mediterra-dark', 'text-white');
+        }
+    </script>
+</body>
+</html>
